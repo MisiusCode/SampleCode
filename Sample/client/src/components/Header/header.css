@@ -1,0 +1,15 @@
+#header {
+    width: inherit;
+    background-color: #1b1c1d;
+    height: 60px;
+    color: #f7f7f7;
+    vertical-align: center;
+    padding: 5px 5px 5px 5px;
+}
+
+#headeroptions {
+    height: 50px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 9px 5px;
+}

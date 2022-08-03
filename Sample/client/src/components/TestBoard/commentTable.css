@@ -1,0 +1,39 @@
+.commentTable {
+    display: block;
+    height: 75vh;
+    overflow: auto;
+
+  }
+
+  .commentTable thead,
+  .commentTable tbody tr {
+    word-wrap: break-word;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+
+  }
+
+  .sidescroll {
+    overflow-x: scroll;
+  }
+
+.counterTable  thead,
+.counterTable  tbody tr {
+     text-align: center;
+     font-size: 0.5vw !important
+}
+
+.counterTable th{
+  padding: 0.6em !important;
+  font-size: 0.7vw !important
+}
+
+.changesModal {
+  width: 75em !important;
+}
+
+.counterTable{
+  margin-left: -2em !important;
+}
+

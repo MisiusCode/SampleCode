@@ -1,0 +1,58 @@
+{
+  "name": "testtool-webapp",
+  "version": "10.4.27",
+  "description": "",
+  "main": "index.js",
+  "bin": "./build/index.js",
+  "scripts": {
+    "dev": "npx eslint ./ && export NODE_ENV=dev && babel-node ./index.js",
+    "start": "npx eslint --fix ./ && export NODE_ENV=dev && npm run-script build --prefix ./client && babel-node ./index.js",
+    "build-service": "export NODE_ENV=production && babel ./service --out-dir ./build/service",
+    "build-client": "npm run-script build --prefix ./client && mkdir ./build/client && cp -R ./client/build ./build/client",
+    "build-index": "babel ./index.js --out-dir ./build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack-linux": "npx pkg package.json -t node12-linux-x64 --debug -o ./testtool-webapp-v$npm_package_version.run",
+    "pack-win": "npx pkg package.json -t node12-win-x64 --debug -o ./testtool-webapp-v$npm_package_version.exe",
+    "release-win": "rm -rf ./build && npm run-script build-service && npm run-script build-index && npm run-script build-client && npm run-script pack-win",
+    "release-linux": "rm -rf ./build && npm run-script build-service && npm run-script build-index && npm run-script build-client && npm run-script pack-linux"
+  },
+  "pkg": {
+    "assets": [
+      "build/client/**/*"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.5",
+    "express-http-proxy": "^1.6.0",
+    "form-data": "^2.4.0",
+    "gunzip-file": "^0.1.1",
+    "mongodb": "^3.3.2",
+    "node-fetch": "^2.6.0",
+    "node-fetch-cookies": "^2.0.2",
+    "open": "^6.4.0",
+    "pkg": "^4.4.0",
+    "portscanner": "^2.2.0",
+    "ssh2": "^1.6.0",
+    "tar-fs": "^2.0.0",
+    "ws": "^7.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "babel-watch": "^7.4.1",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}

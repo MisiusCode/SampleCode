@@ -1,0 +1,17 @@
+#dashboard {
+    position: fixed;
+    height: calc(100vh - 60px);
+    width: 100vw;
+    padding: 10px 10px 10px 10px;
+    overflow-y: auto;
+    overflow-x: hidden
+}
+
+#refresh {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,7 @@
+#options {
+    height: calc(100vh - 60px);
+    width: 100vw;
+    padding: 10px 10px 10px 10px;
+    overflow-y: auto;
+    overflow-x: hidden
+}
